@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnmrqljm76gwa"]
+
+[ext_resource type="PackedScene" uid="uid://c4tm42kl0g2j" path="res://scenes/ui.tscn" id="1_6ycg3"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_7r6ou"]
+[ext_resource type="PackedScene" uid="uid://cokuxuvpiue2n" path="res://scenes/world.tscn" id="2_80vn3"]
+[ext_resource type="PackedScene" uid="uid://b2tn1366y62ls" path="res://scenes/entities.tscn" id="4_x5akq"]
+[ext_resource type="PackedScene" uid="uid://g3v65gbjmkf5" path="res://scenes/audio.tscn" id="5_6w5a0"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_7r6ou")
+
+[node name="Entities" parent="." instance=ExtResource("4_x5akq")]
+
+[node name="World" parent="." instance=ExtResource("2_80vn3")]
+
+[node name="Audio" parent="." instance=ExtResource("5_6w5a0")]
+
+[node name="UI" parent="." instance=ExtResource("1_6ycg3")]

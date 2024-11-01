@@ -1,0 +1,17 @@
+[
+	{
+		"text": "Things are quieter than usual tonight",
+		"speed": 0.10,
+		"start_delay": 10.0
+	},
+	{
+		"text": "Must be because of the rain",
+		"speed": 0.09,
+		"start_delay": 4.5
+	},
+	{
+		"text": "...",
+		"speed": 0.2,
+		"start_delay": 2.0
+	}
+]

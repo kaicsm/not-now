@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://g3v65gbjmkf5"]
+
+[ext_resource type="AudioStream" uid="uid://cqiy5nkifphhy" path="res://assets/audio/musics/forest.ogg" id="1_pfgbp"]
+[ext_resource type="AudioStream" uid="uid://cafi7unv477sa" path="res://assets/audio/sounds/click.wav" id="1_sp421"]
+[ext_resource type="AudioStream" uid="uid://d0puq6f8cyelx" path="res://assets/audio/musics/thunder.ogg" id="2_lusw4"]
+[ext_resource type="Script" path="res://scripts/audio/thunder.gd" id="2_ojh34"]
+[ext_resource type="AudioStream" uid="uid://ccap6nlygh5hi" path="res://assets/audio/musics/rain.ogg" id="4_1ih0a"]
+
+[node name="Audio" type="Node"]
+
+[node name="SoundEffects" type="Node" parent="."]
+
+[node name="CharacterSound" type="AudioStreamPlayer2D" parent="SoundEffects"]
+stream = ExtResource("1_sp421")
+
+[node name="Thunder" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("2_lusw4")
+script = ExtResource("2_ojh34")
+
+[node name="Timer" type="Timer" parent="SoundEffects/Thunder"]
+
+[node name="Musics" type="Node" parent="."]
+
+[node name="ForestMusic" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource("1_pfgbp")
+autoplay = true
+parameters/looping = true
+
+[node name="Rain" type="AudioStreamPlayer" parent="Musics"]
+stream = ExtResource("4_1ih0a")
+autoplay = true
+parameters/looping = true

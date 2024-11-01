@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4tm42kl0g2j"]
+
+[ext_resource type="FontFile" uid="uid://jyhydiwd50ht" path="res://assets/fonts/bodoni.ttf" id="1_7rep3"]
+[ext_resource type="Script" path="res://scripts/ui/intro.gd" id="1_ysige"]
+[ext_resource type="Script" path="res://scripts/global/typewriter_label.gd" id="2_g8uls"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbn4a"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q55ht"]
+font = ExtResource("1_7rep3")
+font_size = 30
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Intro" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ysige")
+
+[node name="Background" type="Panel" parent="Intro"]
+custom_minimum_size = Vector2(840, 480)
+layout_mode = 0
+offset_right = 840.0
+offset_bottom = 480.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cbn4a")
+
+[node name="WelcomeLabel" type="Label" parent="Intro"]
+layout_mode = 0
+offset_right = 840.0
+offset_bottom = 480.0
+label_settings = SubResource("LabelSettings_q55ht")
+script = ExtResource("2_g8uls")
+base_speed = 0.1
+mistake_chance = 0.01
+allow_skip = false
+end_sequence_delay = 5.0
+
+[connection signal="sequence_finished" from="Intro/WelcomeLabel" to="Intro/WelcomeLabel" method="_on_sequence_finished"]
+[connection signal="typing_finished" from="Intro/WelcomeLabel" to="Intro/WelcomeLabel" method="_on_typing_finished"]
